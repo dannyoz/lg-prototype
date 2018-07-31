@@ -1,0 +1,101 @@
+.dls-code-preview-panel {
+  border: 1px solid $mid-light-grey;
+  margin-top: $component-margin-medium;
+
+  &.dls-code-preview-panel-dark {
+    background-color: $light-grey;
+  }
+
+  .dls-preview {
+    position: relative;
+    padding: $component-padding-medium;
+
+    &.dls-preview-narrow {
+      @include breakpoint(md) {
+        width: 60%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+  }
+}
+
+.dls-preview {
+  padding: $component-padding-medium 0;
+}
+
+.dls-code-wrap {
+  border-top: 1px solid $mid-light-grey;
+  background-color: $light-grey;
+
+  .dls-code {
+    max-height: 180px;
+    overflow: auto;
+
+    > pre, > code {
+      display: block;
+      padding: $component-padding-half $component-padding;
+      overflow: auto;
+    }
+
+    .tag {
+      color: $color-blue-dark;
+    }
+
+    .attr-name {
+      color: $color-red-dark;
+    }
+
+    .attr-value {
+      color: $color-green-dark;
+
+      .punctuation {
+        color: $darker;
+      }
+    }
+  }
+
+  pre[class*='language-'].line-numbers {
+    position: relative;
+    padding-left: 3.8em;
+    counter-reset: linenumber;
+
+    > code {
+      position: relative;
+      white-space: inherit;
+    }
+  }
+
+  .line-numbers .line-numbers-rows {
+    position: absolute;
+    pointer-events: none;
+    top: 0;
+    font-size: 100%;
+    left: -3.8em;
+    width: 3em;
+    /* works for line-numbers below 1000 lines */
+    letter-spacing: -1px;
+    border-right: 1px solid $darker;
+    user-select: none;
+  }
+
+  .line-numbers-rows > span {
+    pointer-events: none;
+    display: block;
+    counter-increment: linenumber;
+
+    &:before {
+      content: counter(linenumber);
+      color: $darker;
+      display: block;
+      padding-right: 0.8em;
+      text-align: right;
+    }
+  }
+}
+
+.dls-code-inline {
+  background-color: $light-grey;
+  border-radius: 4px;
+  padding: 0 component-space(1);
+}

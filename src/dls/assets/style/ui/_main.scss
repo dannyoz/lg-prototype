@@ -1,0 +1,28 @@
+.dls-page {
+  display: block;
+
+  @include breakpoint(sm) {
+    margin-left: $nav-width;
+  }
+}
+
+.dls-main-section, .dls-container {
+  padding: $component-padding-half;
+
+  @include breakpoint(lg) {
+    max-width: 1170px;
+    margin: 0 auto;
+  }
+}
+
+.dls-main-section {
+  margin-bottom: component-space(28);
+}
+
+.dls-panel {
+  display: none;
+
+  &.active {
+    display: block;
+  }
+}

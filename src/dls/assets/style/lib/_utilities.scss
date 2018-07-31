@@ -1,0 +1,74 @@
+// .skip-content
+//
+// Hidden button to skip past the header to the main page content
+
+.skip-content {
+  left: -999px;
+  position: absolute;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  z-index: -999;
+  cursor: pointer;
+  background-color: $white;
+
+  &:focus,
+  &:active {
+    left: $component-margin-half;
+    overflow: auto;
+    z-index: 999;
+    margin: $component-margin-half;
+    width: auto;
+    height: auto;
+  }
+}
+
+// .text-left
+//
+// Apply the text-align: left property to an element
+
+.text-left {
+  text-align: left;
+}
+
+// .text-center
+//
+// Apply the text-align: center property to an element
+
+.text-center {
+  text-align: center;
+}
+
+// .text-right
+//
+// Apply the text-align: right property to an element
+
+.text-right {
+  text-align: right;
+}
+
+// .float-left
+//
+// Apply the float: left property to an element
+
+.float-left {
+  float: left;
+}
+
+// .float-right
+//
+// Apply the float: right property to an element
+
+.float-right {
+  float: right;
+}
+
+
+// .access
+//
+// Hides content but makes it availbale for screen readers to interpret
+
+.access {
+  @include access();
+}

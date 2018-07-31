@@ -1,0 +1,75 @@
+.switch {
+  width: 140px;
+  height: 46px;
+  background: $white;
+  border-radius: 24px;
+  position: relative;
+  border: 1px solid $grey;
+  display: block;
+  cursor: pointer;
+}
+
+.switch-input {
+  @include access();
+}
+
+.switch-handle {
+  background-color: $color-blue;
+  border-radius: 22px;
+  position: absolute;
+  height: 42px;
+  width: 72px;
+  left: 64px;
+  top: 1px;
+  transition: left 0.15s $animation-fn;
+}
+
+.switch-focus {
+  position: absolute;
+  border-radius: 26px;
+  top: -#{$focus-outline-width};
+  right: -#{$focus-outline-width};
+  bottom: -#{$focus-outline-width};
+  left: -#{$focus-outline-width};
+  border: $focus-outline-width solid $focus-outline-color;
+  opacity: 0;
+  transition: opacity 0.15s $animation-fn;
+}
+
+.switch-input:checked ~ .switch-handle {
+  left: 1px;
+}
+
+.switch-input:focus ~ .switch-focus {
+  opacity: 1;
+}
+
+.switch-input:focus:not([keyboard-focus]) ~ .switch-focus {
+  opacity: 0;
+}
+
+.switch-toggle {
+  width: 72px;
+  position: absolute;
+  top: 50%;
+  text-align: center;
+  transform: translateY(-50%);
+}
+
+.switch-toggle-on {
+  left: 0;
+  color: $darker;
+}
+
+.switch-toggle-off {
+  right: 0;
+  color: $white;
+}
+
+.switch-input:checked ~ .switch-toggle-on {
+  color: $white;
+}
+
+.switch-input:checked ~ .switch-toggle-off {
+  color: $darker;
+}

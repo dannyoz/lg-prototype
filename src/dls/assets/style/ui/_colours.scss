@@ -1,0 +1,43 @@
+$custom-breakpoint: 400px;
+
+.dls-colours {
+  .dls-colour-section {
+    .dls-swatch-list {
+      overflow: hidden;
+    }
+
+    .dls-swatch-list-group {
+      @include clearfix;
+    }
+
+    .dls-swatch {
+      width: 150px;
+      margin: $component-margin-half auto 0;
+      text-align: center;
+
+      @include breakpoint($custom-breakpoint) {
+        float: left;
+        height: auto;
+        text-align: left;
+        min-height: 195px;
+        margin: $component-margin $component-margin 0 0;
+      }
+
+      .dls-swatch-colour {
+        height: 120px;
+        width: 120px;
+        border-radius: 60px;
+        display: block;
+        margin: $component-margin auto component-space(6);
+
+        @include breakpoint($custom-breakpoint) {
+          margin: $component-margin 0;
+        }
+      }
+
+      .dls-swatch-colour-border {
+        border: 1px solid $mid-light-grey;
+      }
+    }
+  }
+}

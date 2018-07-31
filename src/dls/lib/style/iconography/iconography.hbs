@@ -1,0 +1,13 @@
+<ul class="dls-icons-list">
+  {{#each data}}
+    <li class="dls-icon-preview">
+      <i class="dls-icon icon {{className}}" aria-hidden="true"></i>
+      <div class="dls-icon-info">
+        <strong class="dls-icon-selector"><span class="access">Selector: </span>.{{className}}</strong>
+        <span class="dls-icon-entity"><span class="access">Entity code: </span>{{entityCode}}</span>
+      </div>
+    </li>
+  {{/each}}
+</ul>
+
+{{> content-sections}}

@@ -1,0 +1,19 @@
+// rem($px)
+//
+// $px = size in px;
+//
+// Convert px to rem unit.
+
+@function rem($px) {
+  @return ($px / 16) + rem;
+}
+
+// component-space($times)
+//
+// $times = the times you want to multiply the default space (4px).
+//
+// Calulate the spacing
+
+@function component-space($times) {
+  @return ($times * 4) + px;
+}

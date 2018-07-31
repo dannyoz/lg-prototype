@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<!--[if IE 9]><html lang="en" class="ie9"><![endif]-->
+<!--[if !(IE)]><!-->
+<html lang="en">
+<!--<![endif]-->
+  <head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="x-ua-compatible" content="ie=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>Design language system - Legal and General</title>
+    <meta name="description" content="Design language system - Legal and General"/>
+    <base href="/">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/icon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/icon/favicon-16x16.png">
+    <link rel="stylesheet" type="text/css" href="assets/style/style.css?v={{cachebuster}}">
+  </head>
+
+  <body>
+    <header class="dls-header divider-bottom-thick">
+      <img alt="Legal and General" class="main-logo" src="assets/images/landg-logo.svg">
+      <h1>{{heading}}</h1>
+      <a href="#main-content" class="skip-content">Skip to main content</a>
+
+      {{> navigation}}
+    </header>
+
+    <div class="dls-page">
+      <main role="main" class="dls-main-section" id="main-content">
+        {{#each pages}}
+          {{#unless children}}
+          {{> (getTemplateName template) id=(concatKebab (lowercase title)) pageIndex=@key}}
+          {{/unless}}
+
+          {{#each children}}
+          {{> (getTemplateName template) id=(concatKebab (lowercase title)) pageIndex=@../key}}
+          {{/each}}
+        {{/each}}
+      </main>
+
+      <div id="dls-section-navigation" role="navigation">
+      {{#each pages}}
+        {{#each children}}
+        {{> section-nav innerPages=../children id=(concatKebab (lowercase title)) pageIndex=@../key}}
+        {{/each}}
+      {{/each}}
+      </div>
+
+      <div class="dls-footer">
+        {{> footer}}
+      </div>
+    </div>
+
+    <script src="assets/scripts/main.bundle.js?v={{cachebuster}}" type="text/javascript"></script>
+  </body>
+</html>

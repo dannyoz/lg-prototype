@@ -1,0 +1,64 @@
+.tab-list {
+  border-bottom: 1px solid $mid-light-grey;
+
+  @include breakpoint(sm) {
+    display: block;
+  }
+
+  .tab-list-item {
+    display: block;
+
+    @include breakpoint(sm) {
+      display: inline-block;
+    }
+
+    @include fontsize(0);
+
+    + .tab-list-item {
+      @include breakpoint(sm) {
+        margin-left: component-space(4);
+      }
+    }
+
+    .tab {
+      background-color: $white;
+      border-color: $white;
+      color: $darker;
+      position: relative;
+      display: block;
+      text-align: center;
+      padding: component-space(5) component-space(1);
+      border-width: 0 0 3px;
+      border-style: solid;
+      text-decoration: none;
+      cursor: pointer;
+      font-weight: $bold-font-weight;
+      @include fontsize(16);
+      line-height: 1;
+      transition: all $animation-duration $animation-fn;
+
+      &:hover {
+        border-color: $color-blue-lighter;
+      }
+
+      &.active {
+        border-color: $color-blue-light;
+      }
+    }
+  }
+}
+
+.tab-content {
+  .tab-panel {
+    display: none;
+    padding: component-space(5);
+
+    @include breakpoint(sm) {
+      padding: component-space(5) 0;
+    }
+
+    &.active {
+      display: block;
+    }
+  }
+}

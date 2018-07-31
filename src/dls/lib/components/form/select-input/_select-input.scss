@@ -1,0 +1,44 @@
+// Remove blue background when selected and focused in IE
+select:focus::-ms-value {
+  background-color: $white;
+  color: $dark;
+}
+
+.form-field-select {
+  position: relative;
+
+  select.form-control {
+    position: relative;
+    padding-right: 35px;
+    appearance: none;
+
+    .ie9 & {
+      padding: $form-control-padding-horizontal;
+    }
+
+    &::-ms-expand {
+      display: none; /* remove default arrow in IE 10 and 11 */
+    }
+
+    option {
+      background-color: $white;
+      color: $dark;
+      box-shadow: none;
+    }
+  }
+
+  .icon {
+    position: absolute;
+    right: component-space(3);
+    top: component-space(3);
+    pointer-events: none;
+
+    .has-error & {
+      color: $color-red-dark;
+    }
+
+    .ie9 & {
+      display: none;
+    }
+  }
+}

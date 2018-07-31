@@ -1,0 +1,62 @@
+@mixin checkmark() {
+  position: absolute;
+  opacity: 0;
+  width: auto;
+
+  + label, + .form-label {
+    position: relative;
+    cursor: pointer;
+    padding: 0;
+  }
+
+  + label:before, + .form-label:before {
+    content: '';
+    margin: component-space(1) 10px 0 0;
+    display: inline-block;
+    vertical-align: middle;
+    width: $checkmark-height;
+    height: $checkmark-height;
+    background-color: $white;
+    border: 1px solid $grey;
+    position: relative;
+    top: -4px;
+
+    .has-error & {
+      border: $form-control-border-width solid $color-red-dark;
+      background-color: $color-red-lighter;
+    }
+  }
+
+  &:focus + label:before, &:focus + .form-label:before {
+    box-shadow: 0 0 0 $focus-outline-width $focus-outline-color;
+  }
+
+  &:focus:checked + label:before, &:focus:checked + .form-label:before {
+    box-shadow: 0 0 0 $focus-outline-width $focus-outline-color, inset 0 0 0 5px $white;
+
+    .has-error & {
+      box-shadow: 0 0 0 $focus-outline-width $focus-outline-color, inset 0 0 0 5px $color-red-lighter;
+    }
+  }
+
+  &:focus:not([keyboard-focus]) {
+    + label:before, + .form-label:before {
+      box-shadow: inset 0 0 0 5px $white;
+      
+      .has-error & {
+        box-shadow: inset 0 0 0 5px $color-red-lighter;
+      }
+    }
+  }
+
+  &:checked + label:before, &:checked + .form-label:before {
+    background-color: $color-blue;
+    box-shadow: inset 0 0 0 5px $white;
+    transition: all 0.4s $animation-fn;
+
+    .has-error & {
+      background-color: $color-red-dark;
+      box-shadow: inset 0 0 0 5px $color-red-lighter;
+    }
+  }
+}

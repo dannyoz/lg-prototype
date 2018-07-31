@@ -1,0 +1,9 @@
+<div class="dls-code-preview-panel{{#if previewMode}} dls-code-preview-panel-{{previewMode}}{{/if}}">
+  <div class="dls-preview{{#ifCond previewSize "===" "narrow"}} dls-preview-narrow{{/ifCond}}">
+    <h3 class="access">Preview of the {{#if title}}{{title}} {{/if}}component</h3>
+
+    {{> (lookup . 'fileName')}}
+  </div>
+
+  {{> code-markup}}
+</div>

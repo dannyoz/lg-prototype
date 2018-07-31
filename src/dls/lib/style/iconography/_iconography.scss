@@ -1,0 +1,90 @@
+@font-face {
+  font-family: 'lg-icon-font';
+  src: url('#{$fonts-path}/lg-icon-font/lg-icon-font.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+$icon-map: (
+  cross: '\e915',
+  plus: '\e913',
+  minus: '\e914',
+  chevron-left: '\e934',
+  chevron-right: '\e935',
+  chevron-down: '\e90d',
+  chevron-up: '\e90c',
+  chevron-circle-left: '\e90f',
+  chevron-circle-right: '\e910',
+  envelope: '\e900',
+  user-circle: '\e901',
+  comment: '\e902',
+  comments: '\e912',
+  ban: '\e903',
+  expand-arrows: '\e904',
+  minimise-arrows: '\e90a',
+  print: '\e905',
+  chart-pie: '\e907',
+  chart-bar: '\e90b',
+  paperclip: '\e908',
+  heart: '\e909',
+  undo: '\e92e',
+  rss: '\e92f',
+  image: '\e930',
+  play: '\e931',
+  bolt: '\e932',
+  calendar: '\e933',
+  bell: '\e90e',
+  bars: '\e911',
+  question-circle: '\e916',
+  info-circle: '\e938',
+  sign-in: '\e937',
+  location-arrow: '\e939',
+  edit: '\e93a',
+  globe: '\e93c',
+  camera: '\e940',
+  map: '\e941',
+  compass: '\e942',
+  eye: '\e919',
+  lock-open: '\e91a',
+  lock: '\e91b',
+  list: '\e91c',
+  connection: '\e922',
+  trophy: '\e923',
+  search-plus: '\e927',
+  search-minus: '\e929',
+  search: '\e92a',
+  clock: '\e92b',
+  link: '\e92d',
+  home: '\e990',
+  tick: '\e906',
+  error: '\e917'
+);
+
+// Catchall baseclass
+.icon {
+  position: relative;
+  top: 1px;
+  display: inline-block;
+  font-family: $icon-font;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+button.icon {
+  appearance: none;
+  border: 0;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+// Individual icons
+@each $icon-name, $icon-code in $icon-map {
+  .icon-#{$icon-name} {
+    &:before {
+      content: '#{$icon-code}';
+    }
+  }
+}

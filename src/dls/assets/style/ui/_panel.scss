@@ -1,0 +1,41 @@
+.dls-panel {
+  .dls-panel-desc {
+    margin-top: $section-padding;
+    @include breakpoint(lg) {
+      width: 75%;
+    }
+  }
+
+  .dls-panel-heading {
+    padding-top: $section-padding;
+  }
+
+  .dls-sub-panel-heading {
+    padding-top: $component-padding-large;
+  }
+
+  .dls-preview-panel {
+    margin-top: $section-padding;
+  }
+
+  .dls-component-desc {
+    @include breakpoint(lg) {
+      width: 75%;
+    }
+  }
+
+  &[tabindex='-1'] {
+    outline: 0;
+    box-shadow: none;
+  }
+
+  .ie9 & {
+    &[tabindex='-1'] {
+      box-shadow: none;
+    }
+  }
+
+  &-buttons button {
+    margin: component-space(2);
+  }
+}

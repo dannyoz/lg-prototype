@@ -1,0 +1,11 @@
+@import '../checkmark';
+
+input[type='radio'] {
+  @include checkmark();
+
+  + label, + .form-label {
+    &:before {
+      border-radius: 15px;
+    }
+  }
+}

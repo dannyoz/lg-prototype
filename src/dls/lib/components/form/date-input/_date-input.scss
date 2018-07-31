@@ -1,0 +1,30 @@
+.fieldset-select-date {
+  .form-group {
+    display: block;
+
+    .form-field {
+      display: block;
+
+      @include breakpoint(xs) {
+        display: inline-block;
+      }
+
+      + .form-field {
+        margin-top: $component-margin-half;
+
+        @include breakpoint(xs) {
+          margin-top: 0;
+          margin-left: component-space(4);
+        }
+      }
+    }
+  }
+
+  .form-control {
+    width: 100%;
+
+    @include breakpoint(xs) {
+      width: auto;
+    }
+  }
+}

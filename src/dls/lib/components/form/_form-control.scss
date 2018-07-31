@@ -1,0 +1,43 @@
+.form-field {
+  display: block;
+
+  + .form-field {
+    margin-top: $component-margin;
+  }
+}
+
+.fieldset + .form-field {
+  margin-top: $component-margin;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 10px;
+  @include fontsize(16);
+}
+
+.form-control {
+  @include fontsize(16);
+  width: 100%;
+  padding: $form-control-padding-vertical $form-control-padding-horizontal;
+  border-radius: $form-control-border-radius;
+  display: block;
+  border: $form-control-border-width solid $form-control-border-color;
+  background: $white;
+
+  @include breakpoint(xs) {
+    width: $form-control-width;
+  }
+}
+
+.has-error {
+  .form-control {
+    background-color: $color-red-lighter;
+    color: $color-red-dark;
+    border: $form-control-border-width solid $color-red-dark;
+  }
+
+  .form-validation-error {
+    margin-top: $component-margin-half;
+  }
+}

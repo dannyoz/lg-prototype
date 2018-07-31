@@ -1,0 +1,17 @@
+{{#if description}}
+<div class="dls-panel-desc">
+  <p class="standfirst">{{description}}</p>
+</div>
+{{/if}}
+
+{{#if fileName}}
+<div class="dls-preview">
+  {{> (lookup . 'fileName')}}
+</div>
+{{/if}}
+
+{{#if children}}
+{{#each children}}
+  {{> (lookup . 'fileName')}}
+{{/each}}
+{{/if}}

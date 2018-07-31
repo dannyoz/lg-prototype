@@ -1,0 +1,45 @@
+.dls-section-nav {
+  display: none;
+  border-top: 2px solid $mid-light-grey;
+  background-color: $light-grey;
+  overflow: auto;
+
+  &.active {
+    display: block;
+  }
+
+  .dls-container {
+    overflow: auto;
+  }
+
+  .dls-button {
+    text-decoration: none;
+    appearance: none;
+    border: 0;
+    background-color: transparent;
+    font-weight: $light-font-weight;
+    @include fontsize(18);
+    cursor: pointer;
+
+    &:hover {
+      text-decoration: underline;
+      color: $darker;
+    }
+  }
+
+  .dls-prev-btn {
+    float: left;
+
+    .icon {
+      margin-right: $component-margin-half;
+    }
+  }
+
+  .dls-next-btn {
+    float: right;
+
+    .icon {
+      margin-left: $component-margin-half;
+    }
+  }
+}

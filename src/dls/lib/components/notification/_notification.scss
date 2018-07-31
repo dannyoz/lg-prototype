@@ -1,0 +1,51 @@
+.notification {
+  padding: $component-padding-half;
+  display: block;
+  color: $white;
+  background-color: $color-blue;
+  position: relative;
+  padding-right: 50px;
+  @include clearfix();
+
+  *, a {
+    color: $white;
+    margin: 0;
+    padding: 0;
+  }
+
+  + .notification {
+    margin-top: $component-margin;
+  }
+
+  &.notification-success {
+    background-color: $color-green-dark;
+  }
+
+  &.notification-error {
+    background-color: $color-red-dark;
+  }
+
+  &.notification-service {
+    background-color: $darker;
+  }
+
+  .notification-content {
+    float: left;
+  }
+
+  button {
+    position: absolute;
+    right: 0;
+    padding: $component-padding-half;
+    @include fontsize(20);
+
+    &:hover {
+      opacity: 0.75;
+      transition: opacity $animation-duration ease-in-out;
+      
+      &:focus {
+        opacity: 1;
+      }
+    }
+  }
+}

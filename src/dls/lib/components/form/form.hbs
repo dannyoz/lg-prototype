@@ -1,0 +1,82 @@
+<form class="form" autocomplete="off">
+  <div class="form-field">
+    <label for="form-input-1" class="form-label">Text input label</label>
+    <input type="text" id="form-input-1" class="form-control" aria-invalid="false" placeholder="Example placeholder" />
+  </div>
+
+  <div class="form-field">
+    <label for="form-select-id" class="form-label">Select input label</label>
+
+    <div class="form-field-select">
+      <select class="form-control" id="form-select-id" aria-invalid="false">
+        <option>-- Please select -- </option>
+        <option>An option</option>
+      </select>
+
+      <i class="icon icon-chevron-down" aria-hidden="true"></i>
+    </div>
+  </div>
+
+  <fieldset class="fieldset">
+    <legend class="fieldset-label">Checkbox group label</legend>
+    <div class="form-group">
+      <div class="form-field">
+        <input
+          type="checkbox"
+          id="form-checkbox-group-1"
+          name="form-checkbox-group"
+          class="form-control"
+          aria-invalid="false"
+          value="form-checkbox-group-1-value"
+        />
+        <label for="form-checkbox-group-1" class="form-label">Option 1</label>
+      </div>
+      <div class="form-field">
+        <input
+          type="checkbox"
+          id="form-checkbox-group-2"
+          name="form-checkbox-group"
+          class="form-control"
+          aria-invalid="false"
+          aria-labelledby="form-checkbox-legend"
+          value="form-checkbox-group-2-value"
+        />
+        <label for="form-checkbox-group-2" class="form-label">Option 2</label>
+      </div>
+    </div>
+  </fieldset>
+
+  <fieldset class="fieldset fieldset-inline">
+    <legend class="fieldset-label">Radio group label</legend>
+    <div class="form-group">
+      <div class="form-field">
+        <input
+          type="radio"
+          id="form-radio-group-1"
+          name="form-radio-group"
+          class="form-control"
+          aria-invalid="false"
+          aria-labelledby="form-radio-legend-inline"
+          value="form-radio-group-1-value"
+        />
+        <label for="form-radio-group-1" class="form-label">Option 1</label>
+      </div>
+      <div class="form-field">
+        <input
+          type="radio"
+          id="form-radio-group-2"
+          name="form-radio-group"
+          class="form-control"
+          aria-invalid="false"
+          aria-labelledby="form-radio-legend-inline"
+          value="form-radio-group-2-value"
+        />
+        <label for="form-radio-group-2" class="form-label">Option 2</label>
+      </div>
+    </div>
+  </fieldset>
+
+  <div class="form-field">
+    <button type="submit" class="btn btn-primary btn-chevron">Submit</button>
+  </div>
+</form>

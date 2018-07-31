@@ -1,0 +1,155 @@
+.dls-burger-nav {
+  display: block;
+  position: relative;
+  float: right;
+
+  @include breakpoint(sm) {
+    display: none;
+  }
+}
+
+.dls-menu-button {
+  appearance: none;
+  color: $darker;
+  background-color: transparent;
+  border: 0;
+  position: absolute;
+  right: 5px;
+  top: 18px;
+  cursor: pointer;
+
+  .icon {
+    width: 30px;
+    height: 25px;
+    position: relative;
+    margin: 6px auto;
+    transform: rotate(0deg);
+    transition: 0.5s ease-in-out;
+
+    .icon-bar {
+      display: block;
+      position: absolute;
+      height: 2px;
+      width: 100%;
+      background: $darker;
+      border-radius: 9px;
+      opacity: 1;
+      left: 0;
+      transform: rotate(0deg);
+      transition: $animation-duration ease-in-out;
+
+      &-1, &-2, &-3 {
+        transform-origin: left center;
+      }
+
+      &-1 {
+        top: 0;
+      }
+
+      &-2 {
+        top: 9px;
+      }
+
+      &-3 {
+        top: 19px;
+      }
+    }
+  }
+}
+
+.dls-header.active {
+  .icon .icon-bar {
+    &-1 {
+      transform: rotate(45deg);
+      top: 0;
+      left: 3px;
+    }
+
+    &-2 {
+      width: 0%;
+      opacity: 0;
+    }
+
+    &-3 {
+      transform: rotate(-45deg);
+      top: 21px;
+      left: 3px;
+    }
+  }
+
+  .dls-navigation {
+    display: block;
+  }
+}
+
+.dls-navigation {
+  display: none;
+  box-shadow: 0 2px 3px 0 $grey;
+
+  @include breakpoint(sm) {
+    display: block;
+    box-shadow: none;
+  }
+
+  .dls-btn-toggle .icon {
+    float: right;
+  }
+
+  ul > li {
+    button {
+      background-color: $white;
+    }
+
+    a.active {
+      @include keyline('left');
+    }
+
+    a, button {
+      appearance: none;
+      border: 0;
+      display: inline-block;
+      padding: 15px 20px;
+      width: 100%;
+      text-align: left;
+      text-decoration: none;
+      @include fontsize(16);
+      cursor: pointer;
+      border-bottom: 1px solid $mid-light-grey;
+      font-weight: $default-font-weight;
+
+      &:hover {
+        color: $color-green-dark;
+      }
+
+      &:visited {
+        color: $darker;
+      }
+
+      &:focus {
+        outline-offset: -5px;
+      }
+    }
+
+    > ul {
+      display: none;
+    }
+
+    &.active > ul {
+      display: block;
+      padding: 10px 0;
+    }
+  }
+
+  .level-2 {
+    background-color: $light-grey;
+
+    button {
+      background-color: transparent;
+    }
+
+    a, button {
+      border-bottom: 0;
+      padding: 5px 20px 5px 35px;
+    }
+  }
+}

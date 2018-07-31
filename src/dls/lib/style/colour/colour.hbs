@@ -1,0 +1,24 @@
+<div class="dls-colours">
+  {{#each data}}
+    <div class="dls-colour-section">
+      <h3 class="dls-sub-heading">{{heading}}</h3>
+
+      <div class="dls-swatch-list">
+        {{#if colours.firstGroup}}
+          <div class="dls-swatch-list-group">
+            {{#each colours.firstGroup}}
+              {{> colour-swatch}}
+            {{/each}}
+          </div>
+          {{#if colours.secondGroup}}
+            <div class="dls-swatch-list-group">
+              {{#each colours.secondGroup}}
+                {{> colour-swatch}}
+              {{/each}}
+            </div>
+          {{/if}}
+        {{/if}}
+      </div>
+    </div>
+  {{/each}}
+</div>

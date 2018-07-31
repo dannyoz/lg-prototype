@@ -1,0 +1,16 @@
+@import '../checkmark';
+
+input[type='checkbox'] {
+  @include checkmark();
+  @include access();
+
+  + label, + .form-label {
+    &:before {
+      border-radius: 2px;
+      
+      @include ie10up() {
+        border-radius: 0;
+      }
+    }
+  }
+}

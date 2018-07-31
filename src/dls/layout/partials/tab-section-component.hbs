@@ -1,0 +1,45 @@
+{{#if description}}
+<div class="dls-panel-desc">
+  <p class="standfirst">{{description}}</p>
+</div>
+{{/if}}
+
+{{#if children}}
+  {{#each children}}
+    {{#if title}}
+    <h3 class="dls-sub-panel-heading">{{title}}</h3>
+    {{/if}}
+    {{#if description}}
+    <div class="dls-component-desc">
+      <p>{{description}}</p>
+    </div>
+    {{/if}}
+
+    {{#if fileName}}
+      {{> code-preview-panel}}
+    {{/if}}
+
+    {{#unless fileName}}
+      {{#if children}}
+        {{#each children}}
+          {{#if title}}
+          <h4 class="dls-sub-panel-heading">{{title}}</h4>
+          {{/if}}
+          {{#if description}}
+          <div class="dls-component-desc">
+            <p>{{description}}</p>
+          </div>
+          {{/if}}
+          {{> code-preview-panel}}
+        {{/each}}
+      {{/if}}
+    {{/unless}}
+  {{/each}}
+{{else}}
+  {{> code-preview-panel}}
+{{/if}}
+
+{{#if usage}}
+<h3 class="dls-panel-heading">Usage</h3>
+{{{usage}}}
+{{/if}}

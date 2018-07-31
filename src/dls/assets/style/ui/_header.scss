@@ -1,0 +1,45 @@
+.dls-header {
+  @include breakpoint(sm) {
+    position: fixed;
+    width: $nav-width;
+    height: 100%;
+    z-index: 1;
+    overflow-x: auto;
+    background-color: $white;
+    border-right: 1px solid $mid-light-grey;
+  }
+
+  .main-logo {
+    width: 100%;
+    max-width: 64px;
+    margin: 15px;
+
+    @include breakpoint(sm) {
+      max-width: 85px;
+      margin: 25px 15px 25px 25px;
+    }
+  }
+
+  h1 {
+    display: none;
+
+    @include breakpoint(sm) {
+      display: block;
+      @include fontsize(21);
+      line-height: 1.2;
+      width: 35%;
+      float: right;
+      padding-left: 22px;
+      margin: 45px 30px 5px 0;
+      border-left: 1px solid $mid-light-grey;
+    }
+  }
+}
+
+.dls-version {
+  padding: 15px 20px;
+  color: $dark;
+  @include fontsize(14);
+  display: inline-block;
+  background-color: $white;
+}

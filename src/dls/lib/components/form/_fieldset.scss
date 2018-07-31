@@ -1,0 +1,80 @@
+.fieldset {
+  padding: 0;
+  margin: 0;
+  border: 0;
+
+  + .fieldset {
+    margin-top: $component-margin;
+  }
+
+  &-label {
+    padding: 0 0 component-space(4);
+    margin: 0;
+    display: block;
+    width: 100%;
+
+    &:after {
+      clear: left;
+      content: ' ';
+    }
+  }
+
+  .form-group {
+    display: block;
+
+    .form-field {
+      display: block;
+
+      @include breakpoint(xs) {
+        + .form-field {
+          margin-left: 0;
+          margin-top: $component-margin-half;
+        }
+      }
+    }
+  }
+
+  @include breakpoint(xs) {
+    &.fieldset-inline {
+      overflow: visible;
+
+      .fieldset-label,
+      .form-group {
+        float: left;
+      }
+
+      .fieldset-label {
+        position: relative;
+        margin-right: $component-margin;
+        width: auto;
+        top: $checkmark-offset;
+
+        &:after {
+          clear: none;
+          content: none;
+        }
+      }
+
+      .form-group {
+        float: left;
+      }
+
+      .form-field {
+        float: left;
+
+        + .form-field {
+          margin-left: $component-margin-half;
+          margin-top: 0;
+        }
+      }
+    }
+  }
+
+  .form-validation-error {
+    @include error;
+  }
+}
+
+.form-field + .fieldset {
+  margin-top: $component-margin;
+}

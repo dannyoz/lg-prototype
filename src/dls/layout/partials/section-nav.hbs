@@ -1,0 +1,20 @@
+<div class="dls-section-nav{{#ifCond pageIndex "===" 0}} active{{/ifCond}}" id="{{id}}-section-nav">
+  <div class="dls-container">
+    {{#with (lookup innerPages (math @index '-' 1))}}
+    <a class="dls-button dls-prev-btn" href="#{{concatKebab (lowercase title)}}">
+      <i class="icon icon-chevron-left" aria-hidden="true"></i>
+      <span class="dls-hidden-sm-up" aria-hidden="true">Prev</span>
+      <span class="dls-hidden-sm" aria-hidden="true">{{title}}</span>
+      <span class="access">Previous section: {{title}}</span>
+    </a>
+    {{/with}}
+    {{#with (lookup innerPages (math @index '+' 1))}}
+    <a class="dls-button dls-next-btn" href="#{{concatKebab (lowercase title)}}">
+      <span class="dls-hidden-sm-up" aria-hidden="true">Next</span>
+      <span class="dls-hidden-sm" aria-hidden="true">{{title}}</span>
+      <span class="access">Next section: {{title}}</span>
+      <i class="icon icon-chevron-right" aria-hidden="true"></i>
+    </a>
+    {{/with}}
+  </div>
+</div>

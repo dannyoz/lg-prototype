@@ -1,0 +1,20 @@
+.form-control {
+  &::placeholder {
+    color: $mid-grey;
+    opacity: 1;
+  }
+
+  /* stylelint-disable selector-no-vendor-prefix */
+  &[placeholder]:focus {
+    &::-webkit-input-placeholder {
+      transition: all 0.2s ease;
+      color: transparent;
+    }
+
+    &::-moz-placeholder, &:-moz-placeholder {
+      transition: all 0.2s ease;
+      color: transparent;
+    }
+  }
+}
+/* stylelint-enable */

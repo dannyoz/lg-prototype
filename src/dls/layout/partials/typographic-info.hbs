@@ -1,0 +1,12 @@
+<div class="dls-font">
+   <{{tag}} class="dls-font-preview {{className}}" aria-describedby="info-{{concatKebab (lowercase previewText)}}">{{previewText}}</{{tag}}>
+
+   <div class="dls-font-info" id="info-{{concatKebab (lowercase previewText)}}">
+    <ul>
+      <li><span class="access">Selector: </span>{{#if selector}}{{selector}}{{else}}{{tag}}{{/if}}</li>
+      <li>font-size: {{fontSize}}</li>
+      <li>line-height: {{lineHeight}}</li>
+      <li>font-weight: {{fontWeight}}</li>
+    </ul>
+  </div>
+</div>

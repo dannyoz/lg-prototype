@@ -1,0 +1,31 @@
+<div class="dls-burger-nav">
+  <button type="button" class="dls-menu-button" aria-controls="primary-nav" aria-expanded="false">
+    <span>MENU</span>
+    <span class="icon" role="presentation">
+      <span class="icon-bar icon-bar-1" aria-hidden="true"></span>
+      <span class="icon-bar icon-bar-2" aria-hidden="true"></span>
+      <span class="icon-bar icon-bar-3" aria-hidden="true"></span>
+    </span>
+  </button>
+</div>
+<nav role="navigation" class="dls-navigation">
+  <ul id="primary-nav">
+    {{#each pages}}
+      <li>
+        {{#if children}}
+          <button type="button" class="dls-btn-toggle{{#ifCond @index "===" 0}} active{{/ifCond}}" aria-expanded="false" aria-controls="list-{{@index}}">
+            {{title}}<i class="icon icon-chevron-down" aria-hidden="true"></i>
+          </button>
+          <ul aria-hidden="true" id="list-{{@index}}" class="level-2">
+            {{#each children}}
+              <li><a href="#{{concatKebab (lowercase title)}}" id="{{concatKebab (lowercase title)}}-nav-item">{{title}} <span class="access">component</span></a></li>
+            {{/each}}
+          </ul>
+        {{else}}
+          <a href="#{{concatKebab (lowercase title)}}"{{#ifCond @index "===" 0}} class="active"{{/ifCond}} id="{{concatKebab (lowercase title)}}-nav-item">{{title}}</a>
+        {{/if}}
+      </li>
+    {{/each}}
+  </ul>
+  <span class="dls-version">v{{version}}</span>
+</nav>

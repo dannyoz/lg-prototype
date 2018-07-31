@@ -1,0 +1,66 @@
+ul,
+ol {
+  padding-left: 0;
+}
+
+ul {
+  &.list,
+  &.list-tick,
+  &.list-cross {
+    li {
+      padding-left: component-space(6);
+      padding-bottom: component-space(1);
+      position: relative;
+
+      &:before {
+        left: 0;
+        top: 2px;
+        position: absolute;
+        color: $list-item-color;
+      }
+    }
+  }
+
+  li {
+    list-style-type: none;
+  }
+
+  &.list li:before {
+    @include icon('minus');
+  }
+
+  &.list-tick li:before {
+    @include icon('tick');
+  }
+
+  &.list-cross li:before {
+    @include icon('cross');
+    color: $color-red;
+  }
+
+  ul {
+    padding-top: component-space(2);
+  }
+}
+
+ol {
+  counter-reset: item;
+
+  > li {
+    display: block;
+    padding-left: component-space(6);
+    padding-bottom: component-space(1);
+
+    &:before {
+      content: counter(item) '. ';
+      counter-increment: item;
+      color: $list-item-color;
+      padding-right: 6px;
+      margin-left: -#{component-space(6)};
+    }
+  }
+
+  ol {
+    padding-top: component-space(2);
+  }
+}

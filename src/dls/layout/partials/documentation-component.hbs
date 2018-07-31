@@ -1,0 +1,39 @@
+<div class="dls-panel dls-panel-{{concatKebab (lowercase title)}}{{#ifCond pageIndex "===" 0}} active{{/ifCond}}" id="{{id}}" aria-hidden="{{#ifCond pageIndex "===" 0}}false{{else}}true{{/ifCond}}" tabindex="-1">
+  {{#if title}}
+  <h2 class="h1 dls-panel-heading">{{{title}}}</h2>
+  {{/if}}
+
+  {{#if overview}}
+  {{#ifCond developer '||' designer}}
+  <div class="tab-container">
+    {{> section-tab-nav id=(concatKebab (lowercase title))}}
+
+    <div class="tab-content">
+    {{#if overview}}
+      <div class="tab-panel active" id="tab-content-overview-{{concatKebab (lowercase title)}}"  aria-hidden="false" aria-labelledby="tab-overview-{{concatKebab (lowercase title)}}" role="tabpanel">
+      {{> tab-section-component overview}}
+      </div>
+    {{/if}}
+
+    {{#if designer}}
+      <div class="tab-panel" id="tab-content-designer-{{concatKebab (lowercase title)}}"  aria-hidden="true" aria-labelledby="tab-designer-{{concatKebab (lowercase title)}}" role="tabpanel">
+      {{> tab-section-component designer}}
+      </div>
+    {{/if}}
+
+    {{#if developer}}
+      <div class="tab-panel" id="tab-content-developer-{{concatKebab (lowercase title)}}"  aria-hidden="true" aria-labelledby="tab-developer-{{concatKebab (lowercase title)}}" role="tabpanel">
+      {{> tab-section-component developer}}
+      </div>
+    {{/if}}
+    </div>
+  </div>
+  {{/ifCond}}
+
+  {{#unless developer}}
+  {{#unless designer}}
+  {{> tab-section-component overview}}
+  {{/unless}}
+  {{/unless}}
+  {{/if}}
+</div>

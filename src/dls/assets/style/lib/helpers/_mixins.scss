@@ -1,0 +1,198 @@
+@import 'functions';
+
+// fontsize($size)
+//
+// $size = an integer;
+//
+// Set the font-size to rem unit and fallback to px for older browsers.
+
+@mixin fontsize($size) {
+  font-size: ($size) + px;
+  font-size: rem($size);
+}
+
+// ie10up()
+//
+// This mixin targets IE10 and IE11 specifically.
+//
+// Markup:
+// .some-selector {
+//   @include ie10up() {
+//     position: static;
+//   }
+// }
+
+@mixin ie10up() {
+  @media screen and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    @content;
+  }
+}
+
+// firefox()
+//
+// This mixin targets Firefox specifically.
+//
+// Markup:
+// .some-selector {
+//   @include firefox() {
+//     position: static;
+//   }
+// }
+
+/* stylelint-disable */
+@mixin firefox() {
+  @-moz-document url-prefix() {
+    @content;
+  }
+}
+/* stylelint-enable */
+
+// icon($icon, $color: null)
+//
+// $icon = string icon name;
+//
+// $color = hex or rgba;
+//
+// This mixin allow to add an icon from the icon font
+
+@mixin icon($icon) {
+  font-family: $icon-font;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  content: map-get($icon-map, $icon);
+}
+
+// error
+//
+// This mixin allow to apply error styles to an element
+
+@mixin error() {
+  padding: $component-padding-half;
+  background-color: $color-red-lighter;
+  color: $color-red-dark;
+
+  > * {
+    margin-top: 0;
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
+  * {
+    color: $color-red-dark;
+  }
+}
+
+// background-position($calc, $fallback)
+//
+// $calc = the calc function to use - for example: calc(100% - 8px);
+//
+// $fallback = percentage;
+//
+// This mixin fix IE9 crashing when using calc on background-position.
+
+@mixin background-position($calc, $fallback) {
+  background-position: $fallback;
+  background-position: $calc;
+
+  .ie9 & {
+    background-position: $fallback;
+  }
+}
+
+// breakpoint($min, $max)
+//
+// $min = the minimum screen resolution measurement
+// $max = the maximum screen resolution measurement
+//
+// This mixin returns an @media rule based on grid sizes [sm, md, lg], [print] or measurement value(s) [null, 100px] (,[100px])
+// e.g. breakpoint(400px)       - open bracket, >= 400px
+//      breakpoint(null, 20rem) - open bracket, <= 20rem
+//      breakpoint(50ex, 100ex) - closed bracket, >= 50ex && <=100ex
+
+$breakpoints-min: (xxs: $screen-xxs-min, xs: $screen-xs-min, sm: $screen-sm-min, md: $screen-md-min, lg: $screen-lg-min);
+$breakpoints-max: (xxs: $screen-xxs-max, xs: $screen-xs-max, sm: $screen-sm-max, md: $screen-md-max);
+
+@mixin breakpoint($min, $max: null) {
+  $mq: '';
+  $small: $min !default;
+  $large: $max !default;
+
+  @if (map-has-key($breakpoints-min, $min)) {
+    $small: map-get($breakpoints-min, $min);
+  }
+  @if (map-has-key($breakpoints-max, $max)) {
+    $large: map-get($breakpoints-max, $max);
+  }
+  @if ($small) {
+    $mq: 'and (min-width: #{$small})';
+  }
+  @if ($large) {
+    $mq: $mq + 'and (max-width: #{$large})';
+  }
+  @media screen #{unquote($mq)} {
+    @content;
+  }
+}
+
+
+// access()
+//
+// Hidden content, only available for screen readers
+
+@mixin access() {
+  clip: rect(1px, 1px, 1px, 1px);
+  position: absolute;
+  left: -1000ex;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+// keyline($position)
+//
+// $position = string.
+//
+// Add a keyline border in the specified position
+
+@mixin keyline($position) {
+  $settings: 3px solid $color-blue-light;
+
+  @if $position == 'top' {
+    border-top: $settings;
+  } @else if $position == 'right' {
+    border-right: $settings;
+  } @else if $position == 'bottom' {
+    border-bottom: $settings;
+  } @else if $position == 'left' {
+    border-left: $settings;
+  }
+}
+
+// Clearfix
+//
+// For modern browsers
+// 1. The space content is one way to avoid an Opera bug when the
+//    contenteditable attribute is included anywhere else in the document.
+//    Otherwise it causes space to appear at the top and bottom of elements
+//    that are clearfixed.
+// 2. The use of `table` rather than `block` is only necessary if using
+//    `:before` to contain the top-margins of child elements.
+//
+// Source: http://nicolasgallagher.com/micro-clearfix-hack/
+
+@mixin clearfix() {
+  &:before,
+  &:after {
+    content: ' '; // 1
+    display: table; // 2
+  }
+
+  &:after {
+    clear: both;
+  }
+}

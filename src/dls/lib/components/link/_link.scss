@@ -1,0 +1,14 @@
+a {
+  color: $link-color;
+  text-decoration: underline;
+  @include fontsize(16);
+  line-height: 1.5;
+
+  &:hover {
+    color: $link-hover-color;
+  }
+
+  &:visited {
+    color: $link-visited-color;
+  }
+}

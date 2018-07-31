@@ -1,0 +1,17 @@
+<ul class="dls-tab-list tab-list" role="tablist">
+  {{#if overview}}
+  <li class="tab-list-item" role="presentation">
+    <a role="tab" id="tab-overview-{{id}}" href="#tab-content-overview-{{id}}" class="tab active" aria-controls="tab-content-overview-{{id}}" aria-selected="true">Overview</a>
+  </li>
+  {{/if}}
+  {{#if designer}}
+  <li class="tab-list-item" role="presentation">
+    <a role="tab" id="tab-designer-{{id}}" href="#tab-content-designer-{{id}}" class="tab" aria-selected="false" tabindex="-1">Designer</a>
+  </li>
+  {{/if}}
+  {{#if developer}}
+  <li class="tab-list-item" role="presentation">
+    <a role="tab" id="tab-developer-{{id}}" href="#tab-content-developer-{{id}}" class="tab" aria-selected="false" tabindex="-1">Developer</a>
+  </li>
+  {{/if}}
+</ul>

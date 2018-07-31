@@ -1,0 +1,18 @@
+.form-field {
+  .form-validation-error {
+    @include error;
+    position: relative;
+    padding-left: ($component-padding-half * 2) + $default-font-size;
+
+    &:before {
+      position: absolute;
+      top: $component-padding-half;
+      left: $component-padding-half;
+      @include icon('error');
+    }
+
+    @include breakpoint(xs) {
+      width: $form-control-width;
+    }
+  }
+}

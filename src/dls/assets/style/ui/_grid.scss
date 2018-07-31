@@ -1,0 +1,53 @@
+.dls-grid-example, .dls-grid-container {
+  .container {
+    background-color: $light-grey;
+  }
+
+  .row + .row {
+    margin-top: component-space(4);
+  }
+
+  [class^='col-'] {
+    background-color: $color-blue-lighter;
+  }
+
+  .inner-col {
+    background-color: $color-blue;
+    color: $white;
+
+    h2 {
+      color: $white;
+    }
+  }
+}
+
+.dls-grid-container {
+  background-color: $light-grey;
+  padding: component-space(6);
+  margin-top: $component-margin;
+}
+
+.dls-col {
+  border-top: 1px solid $light-grey;
+
+  @include breakpoint(md) {
+    display: table;
+    border-top: 0;
+    border-left: 1px solid $light-grey;
+  }
+
+  &:first-child {
+    border: 0;
+  }
+}
+
+.inner-col {
+  text-align: center;
+  color: $white;
+
+  @include breakpoint(md) {
+    display: table-cell;
+    vertical-align: middle;
+    height: 150px;
+  }
+}

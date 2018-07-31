@@ -1,0 +1,11 @@
+.dls-hidden-sm-up {
+  @include breakpoint(md) {
+    display: none;
+  }
+}
+
+.dls-hidden-sm {
+  @include breakpoint(0, sm) {
+    display: none;
+  }
+}

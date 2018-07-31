@@ -1,0 +1,47 @@
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
+  display: block;
+  font-weight: normal;
+  color: $darker;
+}
+
+h1, .h1 {
+  @include fontsize(40);
+  line-height: 1.2;
+  font-weight: $light-font-weight;
+}
+
+h2, .h2 {
+  @include fontsize(32);
+  line-height: 2.25;
+  font-weight: $light-font-weight;
+}
+
+h3, .h3 {
+  @include fontsize(24);
+  line-height: 1.5;
+  font-weight: $default-font-weight;
+}
+
+h4, .h4 {
+  @include fontsize(20);
+  line-height: 1.5;
+  font-weight: $default-font-weight;
+}
+
+h5, .h5 {
+  @include fontsize(16);
+  line-height: 1.25;
+  font-weight: $bold-font-weight;
+}
+
+h6, .h6 {
+  @include fontsize(14);
+  line-height: 1.5;
+  font-weight: $bold-font-weight;
+}
+
+.page-sub-heading {
+  color: $color-blue-dark;
+  font-size: 25px;
+  line-height: 1.6;
+}

@@ -1,0 +1,35 @@
+.card {
+  position: relative;
+  border: 1px solid $mid-light-grey;
+  border-radius: 4px;
+  background-color: $white;
+  box-shadow: 0 0 7px 0 $mid-light-grey;
+
+  + .card {
+    margin-top: $component-margin;
+  }
+
+  .card-title {
+    margin: 0;
+    padding: component-space(5) component-space(5) 0;
+
+    &:after {
+      content: '';
+      height: 2px;
+      background-color: $color-red;
+      display: block;
+      margin: component-space(3) 0;
+      position: relative;
+      left: 0;
+      width: 20px;
+    }
+  }
+
+  .card-body {
+    padding: component-space(5);
+
+    > :first-child {
+      margin-top: 0;
+    }
+  }
+}

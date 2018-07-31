@@ -1,0 +1,103 @@
+// Fonts
+$fonts-path: '~landg-dls/src/assets/fonts' !default;
+$font-family: 'Roboto', arial, Sans-Serif;
+$default-font-weight: 400;
+$bold-font-weight: 500;
+$light-font-weight: 300;
+$thin-font-weight: 100;
+$icon-font: 'lg-icon-font';
+$default-font-size: 16px;
+
+// Focus
+$focus-outline-width: 3px;
+
+// Line height
+$line-height: 1.38;
+
+// Spacing
+$component-margin-large: 64px;
+$component-padding-large: 64px;
+$component-margin-medium: 48px;
+$component-padding-medium: 48px;
+$component-margin: 32px;
+$component-padding: 32px;
+$component-margin-half: 16px;
+$component-padding-half: 16px;
+
+// Forms
+$form-control-padding-vertical: 10px;
+$form-control-padding-horizontal: $component-padding-half;
+$form-control-width: 100%;
+$form-control-border-width: 1px;
+$form-control-border-radius: 2px;
+
+// Checkmarks
+$checkmark-offset: 2px;
+$checkmark-height: 24px;
+$checkmark-width: 24px;
+
+// Component borders
+$component-border-width: 1px;
+$component-border-radius: 2px;
+
+// Animation
+$animation-duration: 0.25s;
+$animation-fn: ease-out;
+
+// Responsvive breakpoints for Bootstrap@3.3.7
+$screen-xxs-min: 300px !default;
+$screen-xs-min: 576px !default;
+$screen-sm-min: 768px !default;
+$screen-md-min: 992px !default;
+$screen-lg-min: 1280px !default;
+
+$screen-xxs-max: ($screen-xs-min - 1) !default;
+$screen-xs-max: ($screen-sm-min - 1) !default;
+$screen-sm-max: ($screen-md-min - 1) !default;
+$screen-md-max: ($screen-lg-min - 1) !default;
+
+$breakpoints-min: (xxs: $screen-xxs-min, xs: $screen-xs-min, sm: $screen-sm-min, md: $screen-md-min, lg: $screen-lg-min);
+$breakpoints-max: (xxs: $screen-xxs-max, xs: $screen-xs-max, sm: $screen-sm-max, md: $screen-md-max);
+
+// Number of columns in the grid.
+$grid-columns: 12 !default;
+
+// Padding between columns. Gets divided in half for the left and right.
+$grid-gutters-widths: (
+  xxs: 10px,
+  xs: 10px,
+  sm: 20px,
+  md: 20px,
+  lg: 20px
+) !default;
+
+// Container margins dor breakpoints
+$container-margins: (
+  xxs: 3%,
+  xs: 3%,
+  sm: 3%,
+  md: 5%,
+  lg: 5%
+) !default;
+
+// Container sizes
+//
+// Define the maximum width of `.container` for different screen sizes.
+
+// Main containers width without gutter
+$container-widths: (
+  xxs: 310px,
+  xs: 1010px,
+  sm: 1000px,
+  md: 1000px,
+  lg: 1180px
+) !default;
+
+// Define container width with gutter included
+$container-xxs: (map-get($container-widths, xxs) + map-get($grid-gutters-widths, xxs)) !default;
+
+$container-xs: (map-get($container-widths, xs) + map-get($grid-gutters-widths, xs)) !default;
+$container-sm: (map-get($container-widths, md) + map-get($grid-gutters-widths, sm)) !default;
+$container-md: (map-get($container-widths, md) + map-get($grid-gutters-widths, md)) !default;
+
+$container-lg: (map-get($container-widths, lg)+ map-get($grid-gutters-widths, lg)) !default;

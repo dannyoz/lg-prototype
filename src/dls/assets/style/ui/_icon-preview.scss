@@ -1,0 +1,54 @@
+.dls-icons-list {
+  display: flex;
+  flex-flow: row wrap;
+
+  .dls-icon-preview {
+    background: $white;
+    position: relative;
+    width: 195px;
+    height: 195px;
+    border: 1px solid $mid-light-grey;
+    text-align: center;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    margin-left: -1px;
+    margin-top: -1px;
+
+    .ie9 & {
+      float: left;
+    }
+
+    .dls-icon {
+      display: block;
+      height: 16px;
+      width: 16px;
+      position: absolute;
+      top: 64px;
+      left: 46%;
+      left: calc(50% - 8px);
+      @include fontsize(20);
+    }
+
+    .dls-icon-info {
+      position: absolute;
+      bottom: 36px;
+      left: 0;
+      right: 0;
+    }
+
+    .dls-icon-selector, .dls-icon-entity {
+      font-weight: $default-font-weight;
+    }
+
+    .dls-icon-selector {
+      display: block;
+      margin-top: $component-margin-half;
+    }
+
+    .dls-icon-entity {
+      color: $grey;
+    }
+  }
+}
