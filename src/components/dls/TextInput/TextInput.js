@@ -1,21 +1,20 @@
-import React from 'react';
-import { validate } from './validationHelper'
+import React from 'react'
+import { validate } from '../_helpers/validationHelper'
 
 class TextInput extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      isValid: true
+      isValid: true,
+      error: null
     }
   }
 
-  validate(event) {
+  validateField(event) {
     const value = event.target.value
     const validationRules = this.props.validationRules
-    const isValid = validate(value, validationRules)
-    if (!isValid) {
-      this.setState({ isValid: false })
-    }
+    const fieldData = validate(value, validationRules)
+    this.setState(fieldData)
   }
 
   handleChange(event) {
@@ -34,14 +33,14 @@ class TextInput extends React.Component {
           className="form-control"
           aria-invalid={inValid}
           placeholder={this.props.placeholder}
-          onBlur={this.validate.bind(this)}
+          onBlur={this.validateField.bind(this)}
           onChange={this.handleChange.bind(this)}
           />
-          {inValid &&
-            <div id="input-2-error" className="form-validation-error">
-              <p>This field contains an error.</p>
-            </div>
-          }
+        {inValid &&
+          <div className="form-validation-error">
+            <p>{this.state.error}</p>
+          </div>
+        }
       </div>
     )
   }
