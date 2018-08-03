@@ -4,6 +4,7 @@ import DateInput from './DateInput/DateInput'
 import EmailInput from './TextInput/EmailInput'
 import SelectInput from './SelectInput/SelectInput'
 import TextInput from './TextInput/TextInput'
+import Toggle from './Toggle/Toggle'
 
 export {
     Button,
@@ -11,5 +12,6 @@ export {
     DateInput,
     EmailInput,
     SelectInput,
-    TextInput
+    TextInput,
+    Toggle
 }
