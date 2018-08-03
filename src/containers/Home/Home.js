@@ -5,7 +5,8 @@ import {
   SelectInput,
   TextInput,
   EmailInput,
-  DateInput
+  DateInput,
+  Toggle
 } from '../../components/dls/dls'
 
 import { formfields } from './formMapping'
@@ -26,8 +27,9 @@ class Home extends React.Component {
           <TextInput {...formfields.name} onChange={this.handleChange.bind(this, 'name')}>Name</TextInput>
           <SelectInput {...formfields.title} onChange={this.handleChange.bind(this, 'title')}>Title</SelectInput>
           <EmailInput {...formfields.confirmEmail} onChange={this.handleChange.bind(this, 'email')}>What's your email address?</EmailInput>
-          <DateInput startYear={1950} >Date of birth</DateInput>
+          <DateInput startYear={1950}>Date of birth</DateInput>
           <CheckBoxGroup {...formfields.options}>Check box group</CheckBoxGroup>
+          <Toggle onClick={() => { console.log('toggle') }}></Toggle>
           <div className="form-field">
             <Button styles={['cta', 'chevron']} onClick={this.submit.bind(this)}>Submit</Button>
             <Button styles={['secondary', 'chevron']} onClick={this.submit.bind(this)}>Cancel</Button>
