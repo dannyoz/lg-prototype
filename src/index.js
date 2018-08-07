@@ -3,8 +3,6 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import Home from './containers/Home/Home'
 import Demo from './containers/Demo/Demo'
-import LetsStartInvesting from './containers/LetsStartInvesting/LetsStartInvesting'
-import Payment from './containers/Payment/Payment'
 import registerServiceWorker from './registerServiceWorker';
 
 import {
@@ -17,8 +15,6 @@ const App = () => (
     <div>
       <Route exact path="/" component={Home} />
       <Route path="/demo" component={Demo} />
-      <Route path="/lets-start-investing" component={LetsStartInvesting} />
-      <Route path="/payment" component={Payment} />
     </div>
   </Router>
 )

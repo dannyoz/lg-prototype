@@ -7,12 +7,17 @@ class ApplicationStep extends React.Component {
   }
 
   render() {
+    const currentStep = this.props.step === this.props.currentStep
+
     return (
-      <div>
-        <h1 onClick={this.switchStep.bind(this)}>
-          <span>{this.props.step}</span>
-          <span> Title goes here</span>
-        </h1>
+      <div className="application-step">
+        <h2 onClick={this.switchStep.bind(this)}>
+          <span className="application-step__number">{this.props.step}</span>
+          <span> {this.props.title}</span>
+        </h2>
+        {currentStep && 
+          <div className="application-step__body">{this.props.children}</div>
+        }
       </div>
     )
   }
