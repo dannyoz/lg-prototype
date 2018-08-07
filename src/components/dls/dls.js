@@ -5,6 +5,7 @@ import EmailInput from './TextInput/EmailInput'
 import NiNumberInput from './TextInput/NiNumberInput'
 import SelectInput from './SelectInput/SelectInput'
 import TextInput from './TextInput/TextInput'
+import Toggle from './Toggle/Toggle'
 
 export {
     Button,
@@ -13,5 +14,6 @@ export {
     EmailInput,
     NiNumberInput,
     SelectInput,
-    TextInput
+    TextInput,
+    Toggle
 }
