@@ -43,3 +43,9 @@ $fonts-path: 'dls/assets/fonts';
 @import 'dls/lib/components/form/text-input/text-input';
 @import 'dls/lib/components/form/select-input/select-input';
 @import 'dls/lib/components/form/date-input/date-input';
+@import 'dls/lib/components/form/text-input/ni-number-input';
+
+a:focus, button:focus, area:focus, input:focus, select:focus, textarea:focus, [tabindex='0']:focus, [tabindex='-1']:focus {
+  outline-offset: 0;
+  outline: 3px solid #fc0!important;
+}

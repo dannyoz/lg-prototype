@@ -1,4 +1,4 @@
-import { validate } from './validationHelper'
+import { validate } from '../validationHelper'
 
 describe('Text input tests', () => {
   it('Should validate fields correctly', () => {

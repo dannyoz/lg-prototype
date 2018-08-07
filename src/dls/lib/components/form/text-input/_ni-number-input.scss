@@ -1,0 +1,21 @@
+.ni-number-input {
+    margin-top: 1rem;
+    
+    input {
+        display: inline-block;
+
+        &:nth-child(1) {
+            width: 4rem;
+        }
+    
+        &:nth-child(2) {
+            margin-left: 1rem;
+            width: 7rem;
+        }
+
+        &:nth-child(3) {
+            margin-left: 1rem;
+            width: 3rem;
+        }
+    }
+}
