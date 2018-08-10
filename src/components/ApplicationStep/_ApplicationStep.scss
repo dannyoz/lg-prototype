@@ -1,3 +1,9 @@
+@include slideIn("left",100,ease,0.6s,20);
+@include slideOut("left",100,ease,0.6s,20);
+@include elastic(ease,3s);
+@include sway(10,ease-in-out,1s);
+@include magic(ease,3s);
+
 .application-step {
     display: block;
 
@@ -19,7 +25,45 @@
         }
     }
 
+    &__panel {
+        overflow: hidden;
+        padding:0;
+        transition-property: all;
+        transition-timing-function: $bounce;
+
+        &--hidden {
+            .form-field, .fieldset {
+                opacity: 0;
+            }
+        }
+
+        &--open {
+            .form-field, .fieldset{
+                @extend .slide-in-left;
+            }
+        }
+
+        &--exit {
+            .form-field, .fieldset{
+                @extend .slide-out-left;
+            }
+        }
+    }
+
     &__body {
         padding: 0 2rem 2rem 2.95rem;
+
+        
+
+        .form-validation-error p{
+            display: inline-block;
+            @extend .magic;
+        }
+
+        .btn {
+            &:hover {
+                @extend .magic;
+            } 
+        }
     }
 }

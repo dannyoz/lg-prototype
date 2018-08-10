@@ -1,5 +1,6 @@
 import React from 'react'
 import {
+  Button,
   TextInput,
   DateInput,
   SelectInput,
@@ -9,6 +10,10 @@ import {
 class PersonalDetails extends React.Component {
   handleChange(field, event) {
     console.log(field, event.target.value)
+  }
+
+  continue() {
+    this.props.switchStep(4)
   }
 
   render() {
@@ -43,6 +48,9 @@ class PersonalDetails extends React.Component {
         <TextInput validationRules={required} onChange={this.handleChange.bind(this, 'city')}>City / town</TextInput>
         <TextInput onChange={this.handleChange.bind(this, 'county')}>County (optional)</TextInput>
         <TextInput validationRules={required} onChange={this.handleChange.bind(this, 'postcode')}>Postcode</TextInput>
+        <div className="form-field">
+          <Button styles={['cta', 'chevron']} onClick={this.continue.bind(this)}>Continue</Button>
+        </div>
       </div>
     )
   }
