@@ -1,6 +1,7 @@
 import React from 'react'
 import ApplicationStep from '../../components/ApplicationStep/ApplicationStep'
 import LetsStartInvesting from '../../components/LetsStartInvesting/LetsStartInvesting'
+import InvestmentOptions from '../../components/InvestmentOptons/InvestmentOptions'
 import Payment from '../../components/Payment/Payment'
 import PersonalDetails from '../../components/PersonalDetails/PersonalDetails'
 
@@ -24,13 +25,16 @@ class Demo extends React.Component {
     return (
       <div className="container">
         <ApplicationStep {...{step: 1, title: 'Lets start', currentStep, switchStep}}>
-          <LetsStartInvesting></LetsStartInvesting>
+          <LetsStartInvesting {...{switchStep}}></LetsStartInvesting>
         </ApplicationStep>
-        <ApplicationStep {...{step: 2, title: 'Payment', currentStep, switchStep}}>
-          <Payment></Payment>
+        <ApplicationStep {...{step: 2, title: 'Investment options', currentStep, switchStep}}>
+          <InvestmentOptions {...{switchStep}}></InvestmentOptions>
         </ApplicationStep>
         <ApplicationStep {...{step: 3, title: 'Personal Details', currentStep, switchStep}}>
-          <PersonalDetails></PersonalDetails>
+          <PersonalDetails {...{switchStep}}></PersonalDetails>
+        </ApplicationStep>
+        <ApplicationStep {...{step: 4, title: 'Payment Details', currentStep, switchStep}}>
+          <Payment {...{switchStep}}></Payment>
         </ApplicationStep>
       </div>
     )

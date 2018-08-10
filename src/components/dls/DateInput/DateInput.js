@@ -1,6 +1,6 @@
 import React from 'react'
-import { days, months, yearRange } from '../_helpers/DateRangeHelper'
-import { kebabify } from '../_helpers/KebabHelper'
+import { days, months, yearRange } from '../_helpers/dateRangeHelper'
+import { kebabify } from '../_helpers/kebabHelper'
 
 class DateInput extends React.Component {
   render() {

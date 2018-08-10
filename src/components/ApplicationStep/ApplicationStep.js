@@ -8,16 +8,21 @@ class ApplicationStep extends React.Component {
 
   render() {
     const currentStep = this.props.step === this.props.currentStep
+    const completed = this.props.step < this.props.currentStep
+
+    const applyClass = prefix => {
+      const completedClass = (completed) ? ` ${prefix}--completed` : ''
+      const currentClass = (currentStep) ? ` ${prefix}--current` : ''
+      return `${prefix}${completedClass}${currentClass}`
+    }
 
     return (
-      <div className="application-step">
-        <h2 onClick={this.switchStep.bind(this)}>
-          <span className="application-step__number">{this.props.step}</span>
+      <div className={applyClass('application-step')}>
+        <h3 className="application-step__title" onClick={this.switchStep.bind(this)}>
+          <span className={applyClass('application-step__number')}>{this.props.step}</span>
           <span> {this.props.title}</span>
-        </h2>
-        {currentStep && 
-          <div className="application-step__body">{this.props.children}</div>
-        }
+        </h3>
+        {currentStep && this.props.children}
       </div>
     )
   }

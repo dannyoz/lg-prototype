@@ -1,7 +1,25 @@
 .application-step {
     display: block;
 
+    &__title {
+        cursor: pointer;
+        margin-bottom: 2rem;
+    }
+
     &__number {
-        border: 1px solid red;
+        border: 2px solid $color-blue-light;
+        border-radius: 100%;
+        display: inline-block;
+        text-align: center;
+        width: 2.5rem;
+
+        &--completed {
+            background-color: $color-blue-light;
+            color: white;
+        }
+    }
+
+    &__body {
+        padding: 0 2rem 2rem 2.95rem;
     }
 }
